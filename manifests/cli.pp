@@ -55,7 +55,7 @@ class jenkins::cli {
     delete_undef_values([
       'java',
       "-jar ${::jenkins::cli::jar}",
-      "-s http://localhost:${port}${prefix}",
+      "-remoting -s http://localhost:${port}${prefix}",
       $auth_arg,
     ]),
     ' '
