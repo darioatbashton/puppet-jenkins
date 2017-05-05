@@ -35,7 +35,7 @@ class jenkins::cli_helper (
     delete_undef_values([
       '/usr/bin/java',
       "-jar ${::jenkins::cli::jar}",
-      "-s http://127.0.0.1:${port}${prefix}",
+      "-remoting -s http://127.0.0.1:${port}${prefix}",
       $auth_arg,
       "groovy ${helper_groovy}",
     ]),
